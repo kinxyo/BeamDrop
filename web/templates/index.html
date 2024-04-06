@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>BeamDrop</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="module" src="/web/static/javascript/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="/web/static/css/style.css">
-</head>
+		<title>BeamDrop</title>
 
-<body>
-    
-    {{ if .UploadSuccess }}
-        <div id="toast"></div>
-    {{ end }}
+		<script type="module" src="/web/static/javascript/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="/web/static/css/style.css" />
+	</head>
 
-    <form id='drop' enctype='multipart/form-data' action='/dropthebeam' method="POST">
-    
-        <input type='file' name='beam' id="beam" multiple>
-        
-        <div id="beam-aim"></div>
-        
-        <label for="beam">Drop file anywhere</label>
-    </form>
+	<body>
+		<form id="drop" enctype="multipart/form-data" action="/beam" method="POST">
+			<input type="file" name="beam" id="beam" multiple />
 
+			<div id="beam-upload"></div>
 
-
-</body>
+			<label for="beam">Drop file anywhere</label>
+		</form>
+	</body>
 </html>

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/kinxyo/Beamsend/pkg/handlers"
+	"github.com/kinxyo/BeamDrop/pkg/handler"
 	"net/http"
 )
 
@@ -12,8 +12,11 @@ func main() {
 	http.Handle("/web/static/javascript/", http.StripPrefix("/web/static/javascript/", http.FileServer(http.Dir("./web/static/javascript"))))
 
 	// Handle routes
-	http.HandleFunc("/", handlers.Welcome)
-	http.HandleFunc("/dropthebeam", handlers.BeamDrop)
+	http.HandleFunc("/", handler.Welcome)
+	http.HandleFunc("/beam", handler.BeamUpload)
+
+	// Wildcard route
+	http.HandleFunc("/drop/", handler.BeamDrop)
 
 	// Start the server
 	http.ListenAndServe(":3000", nil)

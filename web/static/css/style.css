@@ -45,44 +45,7 @@ body {
     opacity: 0;
 }
 
-#toast {
-    position: absolute;
-    top: 2rem;
-}
-
-.appear {
-    opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 2s forwards;
-}
-
-.disappear {
-    animation: fadeOut 2s forwards;
-}
-
-@keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(-20px);
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-    to { 
-        opacity: 0; 
-        transform: translateY(-20px);
-    }
-}
-
-#beam-aim {
+#beam-upload {
     z-index: 5;
     opacity: 0;
     background-color: var(--primary);
@@ -97,7 +60,7 @@ body {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-#beam-aim ul {
+#beam-upload ul {
     list-style-type: none;
     font-family: monospace;
     line-height: 1.1rem;
@@ -119,4 +82,3 @@ button:hover {
 label {
     transition: opacity 0.3s;
 }
-/* I'll just come back with a UI */

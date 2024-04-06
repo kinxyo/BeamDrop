@@ -3,26 +3,14 @@ package handler
 import (
 	"html/template"
 	"net/http"
+    "github.com/kinxyo/BeamDrop/pkg/helper"
 )
 
 func Welcome(w http.ResponseWriter, r *http.Request) {
     
-	success := r.URL.Query().Get("success") == "true"
-
     tmpl, err := template.ParseFiles("web/templates/index.html")
-    
-	if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-        return
-    }
+    helper.ErrorCatch(w, err, "internal", "Coulnd't start the web due to parsing issues.")
 
-    err = tmpl.Execute(w, struct {
-        UploadSuccess bool
-    }{
-        UploadSuccess: success,
-    })
-
-    if err != nil {
-        http.Error(w, err.Error(), http.StatusInternalServerError)
-    }
+    err = tmpl.Execute(w,nil)
+    helper.ErrorCatch(w, err, "internal", "Coulnd't start the web due to failed template execution")
 }

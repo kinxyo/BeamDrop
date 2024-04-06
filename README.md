@@ -1,49 +1,44 @@
+> [!IMPORTANT]
+> Soon to be deployed on AWS & support WebRTC peer-to-peer connection.
+
 # Beamsend
 
-## Idea
+## About
 
 Creating a **file-sharing system** that's like a universal AirDrop.
 
-- It will be fast and lightweight.
-- It will be made in Go and vanilla javascript.
-- It will have very minimal UI.
+**Features**:
 
-The user can upload any type of files up to a certain size, then a link will be generated for downloading the uploaded files.
-Once the files are downloaded, the server will delete the files, but will store:
-
-1. Which device uploaded the files
-2. The IP address
-3. The name of the files uploaded.
-
-The file-sharing system will also support direct connection without link generation.
+- Fast and lightweight, due to being developed using Go and vanilla javascript.
+- Minimal UI for extremely ease-of-use.
+- Supports any type of files, upto the size of 10GB.
+- Drag and drop
+- Privacy support: No files are stored on server & No logs created.
+- Option to self-host
 
 ## Improvements
 
 ### Features
 
-- Implement WebRTC for for peer-to-peer file tranfer; eliminating the need for a server in *direct connect* scenario.
+- [ ] Implement WebRTC for for peer-to-peer file tranfer; eliminating the need for storing in server.
 
 ### Security
 
-- HTTPS connections.
-- Implement strong encryption for uploaded files both at rest and in transit.
-- Consider using short-lived, unique download links with expiration times to further enhance security.
-- You'll need a strategy for user authentication (even if basic) to manage access and prevent unauthorized uploads/downloads.
+- [ ] Add expiration time to the generated links.
+- [ ] Implement strong encryption for uploaded files both at rest and in transit.
+- [ ] Implement strategy for user authentication (even if basic) to manage access and prevent unauthorized uploads/downloads.
+- [ ] HTTPS connections.
 
 ## RoadMap
 
 1. **Core Functionality**
     - [x] Develop a file-upload with temporary storage using Go.
-    - [ ] Implement download link generation with basic security measures.
-    - [ ] Build the minimal UI using vanilla JavaScript.
+    - [x] Implement download link generation
+    - [x] Build the minimal UI using vanilla JavaScript.
+    - [ ] Improve basic security measures.
 2. **Direct Connection**
     - [ ] Research WebRTC integration for peer-to-peer file transfer.
     - [ ] Develop logic for device discovery & secure connection establishment.
-3. **Advance Features**
+3. **Production**
     - [ ] PWA version
-
-## Closing
-
-### Naming
-
-\[image here]
+    - [ ] AWS deployment

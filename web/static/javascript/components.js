@@ -1,24 +1,3 @@
-/* Toast */
-export function AddToast(message, ParentElement) {
-	var ToastMessage = document.createElement("p");
-	ToastMessage.textContent = message;
-	ToastMessage.classList.add("appear");
-
-	ParentElement.appendChild(ToastMessage);
-
-	setTimeout(function () {
-		ToastMessage.classList.remove("appear");
-		ToastMessage.classList.add("disappear");
-	}, 3000);
-
-	// Removing the paragraph from the DOM when the transition ends
-	ToastMessage.addEventListener("transitionend", function () {
-		if (ToastMessage.classList.contains("disappear")) {
-			ToastMessage.parentNode.removeChild(ToastMessage);
-		}
-	});
-}
-
 /* BeamDrop Board */
 export function CreateBoard(dropZone) {
     
@@ -41,7 +20,7 @@ export function CreateBoard(dropZone) {
 }
 
 export function GetBoard() {
-    var dropZone = document.getElementById('beam-aim');
+    var dropZone = document.getElementById('beam-upload');
     
     // If there are no children, create the board
     if (dropZone.children.length === 0) {
