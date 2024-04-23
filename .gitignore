@@ -1,5 +1,4 @@
-tmp/
-temp/
 docs/
-WebRTC.go
 
+# Added by cargo
+/target

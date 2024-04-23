@@ -1,17 +1,6 @@
-<div align="center"><h1>BeamDrop</h1></div>
-<div align="center"><kbd><img style="border-radius:50%;" src="https://github.com/kinxyo/BeamDrop/assets/90744941/a6f5ffe8-daac-4ab3-84ca-93534519e0d8" alt="BeamDrop" /></kbd></div>
+# BeamDrop
 
-<br>
-<br>
+This is the Rust version of it.
 
-**Features**:
-
-- Fast and lightweight, due to being developed using Go and vanilla javascript.
-- Minimal UI for extremely ease-of-use.
-- Supports any type of files, upto the size of 10GB.
-- Drag and drop
-- No files are stored on server & No logs created.
-- Option to self-host
-
-> [!IMPORTANT]
-> Soon to be deployed on AWS & support WebRTC peer-to-peer connection.
+As of yet, based on my experience, I feel Go is only good for creating APIs when using at backend. Like for example, I was creating a Movie Recommended System using Flask. I felt, it could have been much faster and simpler using Go, would love to use Go there. However, when creating \[this] a webapp for file-transfer between devices just like `Airdrop`,  I really felt I should have made this in Rust instead.
+Rust is perfect here because I'm more comfortable in it, and it's also more secure and tight (like Go doesn't have even enums, you have to make `const` AND the error handling in Go is also poor).
